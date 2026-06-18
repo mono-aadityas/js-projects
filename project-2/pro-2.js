@@ -1,10 +1,12 @@
+
+
+function calculate() {
 let num1 = +(prompt('Enter any number.', '1'));
 let sign = (prompt('Enter the operation.', '+'));
 let num2 = +(prompt('Enter any number.', '2'));
 
 
 
-function calculate() {
     if (sign === "+") {
         add = num1 + num2;
         alert(`Result is ${num1} + ${num2} = ${add} `);
@@ -25,8 +27,18 @@ function calculate() {
         alert(`Result is ${num1} / ${num2} = ${divide} `);
     }
 
+
 }
 
+function claculateAgain(){
+   const again= confirm("Want to calculate again?");
+    if(again){
+        calculate();
+    }
+    else{
+        alert('Thank You for using calculator.')
+    }
+}
 // //function add(){
 //  //  let add= num1 + num2;
 
@@ -45,3 +57,4 @@ function calculate() {
 // }
 
 calculate();
+claculateAgain()
