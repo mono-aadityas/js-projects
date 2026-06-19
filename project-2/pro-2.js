@@ -1,60 +1,51 @@
-
-
 function calculate() {
-let num1 = +(prompt('Enter any number.', '1'));
-let sign = (prompt('Enter the operation.', '+'));
-let num2 = +(prompt('Enter any number.', '2'));
+  let num1 = +prompt("Enter any number.", "1");
+  let sign = prompt("Enter the operation.", "+");
+  let num2 = +prompt("Enter any number.", "2");
 
+  let result = null;
 
-
-    if (sign === "+") {
-        add = num1 + num2;
-        alert(`Result is ${num1} + ${num2} = ${add} `);
+  switch (sign) {
+    case "+": {
+      result = num1 + num2;
+      break;
     }
-
-    if (sign === "-") {
-        let sub = num1 - num2;
-        alert(`Result is ${num1} - ${num2} = ${sub} `);
+    case "-": {
+      result = num1 - num2;
+      break;
     }
-
-    if (sign === "*") {
-        let multiply = num1 * num2;
-        alert(`Result is ${num1} * ${num2} = ${multiply} `);
+    case "*": {
+      result = num1 * num2;
+      break;
     }
-
-    if (sign === "/") {
-        let divide = num1 / num2;
-        alert(`Result is ${num1} / ${num2} = ${divide} `);
+    case "/": {
+      result = num1 / num2;
+      break;
     }
+    default: {
+      alert("operator is wrong");
+    }
+  }
 
+  if (result === null) {
+    return;
+  }
 
+  alert(`Result is ${num1} ${sign} ${num2} = ${result}`);
+
+  claculateAgain();
 }
 
-function claculateAgain(){
-   const again= confirm("Want to calculate again?");
-    if(again){
-        calculate();
-    }
-    else{
-        alert('Thank You for using calculator.')
-    }
+function claculateAgain() {
+  const again = confirm("Want to calculate again?");
+
+  if (!again) {
+    alert("Thank You for using calculator.");
+
+    return;
+  }
+
+  calculate();
 }
-// //function add(){
-//  //  let add= num1 + num2;
-
-// }
-
-// function sub(){
-//     let sub=num1-num2;
-// }
-
-// function multiply(){
-//     let multiply= num1 * num2;
-// }
-
-// function divide(){
-//     let divide=num1 / num2;
-// }
 
 calculate();
-claculateAgain()
